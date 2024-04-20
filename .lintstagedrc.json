@@ -1,0 +1,5 @@
+{
+  "**/*.{ts,astro,css}": "prettier --write",
+  "*.{ts,astro}": "eslint --fix",
+  "*.css": "stylelint --fix"
+}
