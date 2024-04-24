@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 144px;
+  padding-bottom: 108px;
+}
+
+@media (min-width: 960px) {
+  .root {
+    padding-bottom: 136px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .root {
+    padding-bottom: 144px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .root {
+    gap: 288px;
+    padding-bottom: 178px;
+  }
+}

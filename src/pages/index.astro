@@ -6,14 +6,18 @@ import { Dialog } from "@/shared/ui/dialog";
 
 import { NavMobile, NavDesktop } from "./_ui/nav";
 import { Hero } from "./_ui/hero";
+import { Upload } from "./_ui/upload";
+
+import styles from "./_styles.module.css";
 ---
 
 <BaseLayout>
   <header class={containerStyles}>
     <NavDesktop />
   </header>
-  <main>
+  <main class={styles.root}>
     <Hero />
+    <Upload />
   </main>
   <Dialog name="menu">
     <NavMobile />
