@@ -76,11 +76,16 @@
 }
 
 .size-regular.icon-only {
-  width: 48px;
-  height: 48px;
+  width: 72px;
+  height: 72px;
 }
 
 .size-small.icon-only {
+  width: 56px;
+  height: 56px;
+}
+
+.size-xsmall.icon-only {
   width: 48px;
   height: 48px;
 }
