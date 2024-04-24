@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import styles from "./styles.module.css";
+
+interface Props extends HTMLAttributes<"button"> {
+  class?: string;
+  size?: "regular" | "small" | "xsmall";
+  variant?: "primary" | "secondary" | "black";
+  iconOnly?: boolean;
+  disabled?: boolean;
+}
+
+const {
+  class: className,
+  size = "regular",
+  variant = "primary",
+  iconOnly = false,
+  disabled,
+  ...rest
+} = Astro.props;
+const classList = [
+  styles.root,
+  styles[`size-${size}`],
+  variant !== "ghost" && styles[`variant-${variant}`],
+  iconOnly && styles.iconOnly,
+  className,
+];
+---
+
+<button
+  disabled={disabled}
+  class:list={classList}
+  aria-disabled={disabled}
+  {...rest}
+>
+  <slot />
+</button>

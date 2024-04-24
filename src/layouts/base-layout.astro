@@ -24,9 +24,12 @@ const description = "Описание";
     <link rel="icon" href={`/icon-${ENV.MODE}.svg`} type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" /><!-- 180×180 -->
     <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
   </head>
   <body id="root">
@@ -39,15 +42,15 @@ const description = "Описание";
     --font-sans: "Plus Jakarta Sans", sans-serif;
 
     /* Colors */
-    --color-main-black: #0A2738;
-    --color-base-white: #FFFFFF;
-    --color-main-dark-gray: #5F6B71;
-    --color-main-gray: #B3BDC3;
-    --color-main-lightgray: #EDF1F5;
-    --color-main-yellow1: #FACB7E;
-    --color-main-yellow2: #FBDCA9;
-    --color-main-red1: #F79C9C;
-    --color-main-red2: #F59EC9;
+    --color-main-black: #0a2738;
+    --color-main-white: #ffffff;
+    --color-main-dark-gray: #5f6b71;
+    --color-main-gray: #b3bdc3;
+    --color-main-lightgray: #edf1f5;
+    --color-main-yellow1: #facb7e;
+    --color-main-yellow2: #fbdca9;
+    --color-main-red1: #f79c9c;
+    --color-main-red2: #f59ec9;
 
     /* Typography */
     --font-title-h1: 800 120px/128px var(--font-sans);
@@ -137,7 +140,7 @@ const description = "Описание";
   */
   #root {
     height: 100%;
-    background-color: var(--color-base-white);
+    background-color: var(--color-main-white);
     isolation: isolate;
   }
 </style>
