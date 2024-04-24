@@ -1,0 +1,43 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 29px;
+  text-align: center;
+}
+
+.heading {
+  font: var(--font-title-h5);
+  color: var(--color-main-black);
+  font-variant-numeric: lining-nums proportional-nums ordinal;
+  font-feature-settings: 'case' on, 'liga' off;
+}
+
+.right {}
+
+@media (min-width: 960px) {
+  .heading {
+    font: var(--font-title-h4);
+  }
+
+  .left {
+    flex-direction: row;
+    text-align: left;
+    gap: 81px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .heading {
+    font: var(--font-title-h3);
+  }
+
+  .supporting-text {
+    font: var(--font-text-main);
+  }
+}
