@@ -1,0 +1,27 @@
+---
+import { Button } from "@/shared/ui/button";
+import { IconSearch, IconPlay } from "@/shared/assets/icons";
+import { containerStyles } from "@/shared/ui/container";
+
+import styles from "./styles.module.css";
+---
+
+<section class:list={[containerStyles, styles.root]}>
+  <div class={styles.left}>
+    <h1 class={styles.heading}>Find any products by image</h1>
+    <div class={styles.actions}>
+      <Button>
+        Try it now
+        <IconSearch />
+      </Button>
+      <Button class={styles.mobile} iconOnly variant="secondary">
+        <IconPlay class={styles.iconPlay} />
+      </Button>
+      <Button class={styles.desktop} variant="secondary">
+        Watch video
+        <IconPlay class={styles.iconPlay} />
+      </Button>
+    </div>
+  </div>
+  <div class={styles.right}></div>
+</section>

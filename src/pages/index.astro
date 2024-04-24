@@ -1,9 +1,11 @@
 ---
 import { BaseLayout } from "@/layouts";
 
-import { NavMobile, NavDesktop } from "./_ui/nav";
 import { containerStyles } from "@/shared/ui/container";
 import { Dialog } from "@/shared/ui/dialog";
+
+import { NavMobile, NavDesktop } from "./_ui/nav";
+import { Hero } from "./_ui/hero";
 ---
 
 <BaseLayout>
@@ -11,24 +13,7 @@ import { Dialog } from "@/shared/ui/dialog";
     <NavDesktop />
   </header>
   <main>
-    <!--<Button>-->
-    <!--  Button example-->
-    <!--  <IconSearch />-->
-    <!--</Button>-->
-
-    <!--<Button variant="secondary">-->
-    <!--  Button example-->
-    <!--  <IconSearch />-->
-    <!--</Button>-->
-
-    <!--<Button variant="black">-->
-    <!--  Button example-->
-    <!--  <IconSearch />-->
-    <!--</Button>-->
-
-    <!--<Button size="small"> Button example </Button>-->
-
-    <!--<Button variant="secondary" size="xsmall">Button example </Button>-->
+    <Hero />
   </main>
   <Dialog name="menu">
     <NavMobile />
