@@ -1,0 +1,23 @@
+---
+import { containerStyles } from "@/shared/ui/container";
+
+import styles from "./styles.module.css";
+
+interface Props {
+  class?: string;
+  name: string;
+  children: any;
+}
+
+const { class: className, name } = Astro.props;
+---
+
+<wc-dialog data-name={name}>
+  <dialog class:list={[styles.root, className]}>
+    <div class:list={[containerStyles, styles.wrapper]}>
+      <slot />
+    </div>
+  </dialog>
+</wc-dialog>
+
+<script src="./script.ts"></script>

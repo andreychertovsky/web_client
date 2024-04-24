@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  padding: var(--spacing-none, 0px) var(--container-padding-mobile, 16px);
+  max-width: var(--container-max-width-desktop, 1824px);
+  width: 100%;
+  margin: 0 auto;
+  /*grid-template-columns: repeat(4, 1fr);*/
+  /*grid-column-gap: 48px;*/
+}
+
+@media (min-width: 640px) {
+  .root {
+    padding: var(--spacing-none, 0px) var(--container-padding-desktop, 32px);
+  }
+}

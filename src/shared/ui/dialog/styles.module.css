@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  min-width: 100%;
+  height: inherit;
+  min-height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease;
+  background-color: var(--color-main-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.root[open] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrapper {
+  height: 100%;
+}

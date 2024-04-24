@@ -1,8 +1,36 @@
 ---
 import { BaseLayout } from "@/layouts";
+
+import { NavMobile, NavDesktop } from "./_ui/nav";
+import { containerStyles } from "@/shared/ui/container";
+import { Dialog } from "@/shared/ui/dialog";
 ---
 
 <BaseLayout>
+  <header class={containerStyles}>
+    <NavDesktop />
+  </header>
   <main>
+    <!--<Button>-->
+    <!--  Button example-->
+    <!--  <IconSearch />-->
+    <!--</Button>-->
+
+    <!--<Button variant="secondary">-->
+    <!--  Button example-->
+    <!--  <IconSearch />-->
+    <!--</Button>-->
+
+    <!--<Button variant="black">-->
+    <!--  Button example-->
+    <!--  <IconSearch />-->
+    <!--</Button>-->
+
+    <!--<Button size="small"> Button example </Button>-->
+
+    <!--<Button variant="secondary" size="xsmall">Button example </Button>-->
   </main>
+  <Dialog name="menu">
+    <NavMobile />
+  </Dialog>
 </BaseLayout>
