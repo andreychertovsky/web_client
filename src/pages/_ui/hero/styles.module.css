@@ -1,0 +1,59 @@
+.root {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.right {
+  display: grid;
+}
+
+.heading {
+  font: var(--font-title-h3);
+  color: var(--color-main-black);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+}
+
+.actions {
+  display: flex;
+  gap: 24px;
+}
+
+.icon-play {
+  color: var(--color-main-yellow1);
+}
+
+.mobile {
+  display: flex;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .left {
+    max-width: 480px;
+    gap: 82px;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
