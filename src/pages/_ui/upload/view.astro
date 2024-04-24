@@ -1,0 +1,17 @@
+---
+import { containerStyles } from "@/shared/ui/container";
+
+import styles from "./styles.module.css";
+---
+
+<section class:list={[containerStyles, styles.root]}>
+  <div class={styles.left}>
+    <h2 class={styles.heading}>Upload an image or take photo using the app</h2>
+    <p class={styles.supportingText}>
+      Discover and compare products instantly across numerous marketplaces with
+      just a photo. We are simplifies your shopping experience by bridging the
+      gap between you and the perfect find.
+    </p>
+  </div>
+  <div class={styles.right}></div>
+</section>
