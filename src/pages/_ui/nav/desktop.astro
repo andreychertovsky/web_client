@@ -1,0 +1,45 @@
+---
+import { IconLang, IconArrowSmall, IconMenu } from "@/shared/assets/icons";
+import { Button } from "@/shared/ui/button";
+
+import styles from "./styles.module.css";
+---
+
+<nav class:list={[styles.root]}>
+  <img class={styles.logo} src="/logo.png" />
+  <button class:list={[styles.buttonLang, styles.mobile]}>
+    <IconLang class={styles.iconLang} />
+    Eng
+    <IconArrowSmall class={styles.iconArrow} />
+  </button>
+  <wc-dialog-open-trigger
+    data-name="menu"
+    class:list={[styles.buttonMenu, styles.mobile]}
+  >
+    <Button iconOnly size="small">
+      <IconMenu />
+    </Button>
+  </wc-dialog-open-trigger>
+  <ul class:list={[styles.list, styles.desktop]}>
+    <li class:list={[styles.item, styles.active]}>
+      <a class:list={[styles.link, styles.active]}>Home</a>
+    </li>
+    <li class={styles.item}>
+      <a class={styles.link}>FAQ</a>
+    </li>
+    <li class={styles.item}>
+      <a class={styles.link}>Contact us</a>
+    </li>
+    <li class={styles.item}>
+      <button class={styles.buttonLang}>
+        <IconLang class={styles.iconLang} />
+        Eng
+        <IconArrowSmall class={styles.iconArrow} />
+      </button>
+    </li>
+  </ul>
+  <div class:list={[styles.actions, styles.desktop]}>
+    <Button variant="secondary" size="small">Sign up</Button>
+    <Button size="small">Let's search</Button>
+  </div>
+</nav>

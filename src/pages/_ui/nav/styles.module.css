@@ -1,0 +1,168 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 0;;
+}
+
+.wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 48px;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+}
+
+.button-lang {
+  background: none;
+  border: none;
+  color: var(--color-main-gray);
+  display: flex;
+  align-items: center;
+  height: 56px;
+  font: var(--font-link-button-small);
+  margin: 0;
+  padding: 0;
+  gap: 6px;
+}
+
+.icon-lang {
+  color: var(--color-main-gray);
+}
+
+.icon-arrow {
+  color: var(--color-main-yellow1);
+  margin-top: 4px;
+}
+
+.button-menu {
+  margin-left: auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0 0 0 22px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border-left: 2px solid var(--color-main-lightgray);
+  padding-left: 24px;
+  height: 72px;
+}
+
+.item.active {
+  border-width: 4px;
+  border-color: var(--color-main-yellow1);
+  margin-left: -1px;
+}
+
+.link {
+  font: var(--font-title-h5);
+  color: var(--color-main-gray);
+}
+
+.link.active {
+  color: var(--color-main-black);
+}
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: flex;
+}
+
+.button-action {
+  padding: 14px 24px;
+}
+
+@media (min-width: 960px) {
+  .root {
+    gap: 32px;
+    align-items: center;
+    padding: 28px 0;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .list {
+    flex-direction: row;
+    gap: 32px;
+    border-bottom: 2px solid var(--color-main-lightgray);
+    margin-top: -6px;
+    margin-left: 0;
+  }
+
+  .item {
+    border-left: none;
+    padding-left: 0;
+    height: 56px;
+    position: relative;
+    bottom: -3px;
+  }
+
+  .item.active {
+    border-bottom: 4px solid var(--color-main-yellow1);
+    margin-left: 0;
+  }
+
+  .link {
+    display: inline-flex;
+    font: var(--font-link-button-small);
+  }
+
+  .actions {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .desktop {
+    display: flex;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .root {
+    gap: 120px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .root {
+    gap: 256px;
+  }
+}

@@ -1,0 +1,45 @@
+---
+import {
+  IconLang,
+  IconArrowSmall,
+  IconClose,
+  IconSearch,
+} from "@/shared/assets/icons";
+import { Button } from "@/shared/ui/button";
+
+import styles from "./styles.module.css";
+---
+
+<nav class:list={[styles.root, styles.wrapper]}>
+  <div class={styles.header}>
+    <img class={styles.logo} src="/logo.png" />
+    <button class={styles.buttonLang}>
+      <IconLang class={styles.iconLang} /> Eng <IconArrowSmall
+        class={styles.iconArrow}
+      />
+    </button>
+    <wc-dialog-close-trigger data-name="menu" class={styles.buttonMenu}>
+      <Button iconOnly size="small">
+        <IconClose />
+      </Button>
+    </wc-dialog-close-trigger>
+  </div>
+  <ul class={styles.list}>
+    <li class:list={[styles.item, styles.active]}>
+      <a class:list={[styles.link, styles.active]}>Home</a>
+    </li>
+    <li class={styles.item}>
+      <a class={styles.link}>FAQ</a>
+    </li>
+    <li class={styles.item}>
+      <a class={styles.link}>Contact us</a>
+    </li>
+  </ul>
+  <div class={styles.actions}>
+    <Button class={styles.buttonAction} variant="secondary">Sign up</Button>
+    <Button>
+      Let's search
+      <IconSearch />
+    </Button>
+  </div>
+</nav>
