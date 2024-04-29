@@ -1,0 +1,103 @@
+---
+import { containerStyles } from "@/shared/ui/container";
+import { Button } from "@/shared/ui/button";
+import {
+  IconSearch,
+  IconEdge,
+  IconChrome,
+  IconAppStore,
+  IconGooglePlay,
+} from "@/shared/assets/icons";
+
+import styles from "./styles.module.css";
+
+interface Item {
+  question: string;
+  answer: string;
+  opened?: boolean;
+}
+
+const items: Item[] = [
+  {
+    question: "Is it free?",
+    answer:
+      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
+  },
+  {
+    question: "Do you offer an api?",
+    answer:
+      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
+  },
+  {
+    question: "Why can't I see the images?",
+    answer:
+      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
+    opened: true,
+  },
+  {
+    question: "Why do I get a quota error?",
+    answer:
+      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
+  },
+  {
+    question: "Why doesn't my result match up?",
+    answer:
+      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
+  },
+];
+---
+
+<section class={styles.root}>
+  <div class:list={[containerStyles, styles.container]}>
+    <div class={styles.wrapper}>
+      <div class={styles.left}>
+        <h3 class={styles.heading}>Frequently asked questions</h3>
+        <p class={styles.supportingText}>
+          If you can't find the answer to your question, please
+          <a class={styles.link} href="#"> Contact us </a>.
+        </p>
+      </div>
+      <div class={styles.right}>
+        {
+          items.map(({ question, answer, opened }, index) => (
+            <details open={opened} class={styles.details}>
+              <summary class={styles.summary}>
+                <span class={styles.number}>0{index + 1}.</span>
+                <span>{question}</span>
+              </summary>
+              <p class={styles.text}>{answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+    <div class={styles.banner}>
+      <div class={styles.bannerWrapper}>
+        <p class={styles.bannerTitle}>Want to try it now?</p>
+        <div class={styles.bannerActions}>
+          <Button class={styles.buttonSearch} variant="black">
+            Let's search
+            <IconSearch />
+          </Button>
+          <Button
+            variant="secondary"
+            class:list={[styles.bannerButton, styles.buttonExtension]}
+          >
+            Browser extension
+            <IconEdge />
+            <IconChrome />
+          </Button>
+          <div class={styles.bannerStores}>
+            <Button variant="secondary" class={styles.bannerButton} iconOnly>
+              <IconAppStore />
+            </Button>
+            <Button variant="secondary" class={styles.bannerButton} iconOnly>
+              <IconGooglePlay />
+            </Button>
+          </div>
+        </div>
+      </div>
+      <div class={styles.bannerBackground}></div>
+    </div>
+  </div>
+</section>
