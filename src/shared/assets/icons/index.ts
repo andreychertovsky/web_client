@@ -1,8 +1,10 @@
+export { default as IconAppStore } from "./app-store.astro";
 export { default as IconArrow } from "./arrow.astro";
 export { default as IconArrowSmall } from "./arrow-small.astro";
 export { default as IconChrome } from "./chrome.astro";
 export { default as IconClose } from "./close.astro";
 export { default as IconEdge } from "./edge.astro";
+export { default as IconGooglePlay } from "./google-play.astro";
 export { default as IconLang } from "./lang.astro";
 export { default as IconMenu } from "./menu.astro";
 export { default as IconPlay } from "./play.astro";
