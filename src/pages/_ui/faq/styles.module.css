@@ -114,7 +114,7 @@
 }
 
 .details[open] > .summary {
-  margin-bottom: var(--spacing-md, 8px);
+  margin-bottom: 8px;
 }
 
 .details[open] > .summary::after {
