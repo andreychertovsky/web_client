@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+
+import { Button } from "@/shared/ui/button";
+import {
+  IconDropbox,
+  IconGoogleDrive,
+  IconSearch,
+} from "@/shared/assets/icons";
+
+import IconUpload from "./upload.svg";
+import styles from "./styles.module.css";
+---
+
+<div class={styles.root}>
+  <div class={styles.top}>
+    <Image src={IconUpload} alt="Upload" />
+    <div class={styles.description}>
+      <h2 class={styles.title}>
+        Drag and drop image here, or <button class={styles.buttonUpload}
+          >upload a file</button>
+      </h2>
+      <p class={styles.supportingText}>
+        You can upload png, webp, jpeg, jpg, tiff, avif. Max 8MB each
+      </p>
+    </div>
+  </div>
+  <div class={styles.divider}>
+    <span class={styles.dividerText}>or</span>
+  </div>
+  <div class={styles.bottom}>
+    <div class={styles.search}>
+      <input class={styles.inputSearch} placeholder="Place image link" />
+      <Button class={styles.buttonSearch} iconOnly>
+        <IconSearch />
+      </Button>
+    </div>
+    <div class={styles.actions}>
+      <Button iconOnly>
+        <IconGoogleDrive />
+      </Button>
+      <Button iconOnly>
+        <IconDropbox />
+      </Button>
+    </div>
+  </div>
+</div>
