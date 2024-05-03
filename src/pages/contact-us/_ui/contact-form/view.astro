@@ -1,0 +1,55 @@
+---
+import { IconPin, IconMail } from "@/shared/assets/icons";
+import { Button } from "@/shared/ui/button";
+
+import styles from "./styles.module.css";
+---
+
+<div class={styles.root}>
+  <div class={styles.header}>
+    <div class={styles.background}></div>
+    <p class={styles.textContact}>
+      <IconPin class={styles.textIcon} />
+      30 N Gould St Ste R Sheridan, Wyoming 82801
+    </p>
+    <p class={styles.textContact}>
+      <IconMail class={styles.textIcon} />
+      support@productsearch.app
+    </p>
+  </div>
+  <form class={styles.form}>
+    <div class={styles.formRow}>
+      <label class={styles.label}>
+        Full name
+        <input
+          name="full_name"
+          type="text"
+          class={styles.input}
+          placeholder="Enter your name"
+          autocomplete="given-name family-name"
+        />
+      </label>
+      <label class={styles.label}>
+        Email address
+        <input
+          name="email"
+          type="email"
+          class={styles.input}
+          placeholder="Enter your email address"
+          autocomplete="email"
+        />
+      </label>
+    </div>
+    <label class={styles.label}>
+      Message
+      <textarea
+        name="message"
+        class:list={[styles.input, styles.textarea]}
+        placeholder="Enter your message"></textarea>
+    </label>
+    <div class={styles.actions}>
+      <div class={styles.cloudflare}>1</div>
+      <Button class={styles.buttonSubmit} type="submit">Get in touch</Button>
+    </div>
+  </form>
+</div>

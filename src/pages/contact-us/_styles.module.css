@@ -1,0 +1,42 @@
+.root {
+  background-color: var(--color-main-lightgray);
+}
+
+.main {
+  padding: 35px 0 11px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  width: 100%;
+  font: var(--font-title-h3);
+  margin-bottom: 60px;
+}
+
+@media (min-width: 960px) {
+  .heading {
+    font: var(--font-title-h2);
+    margin-bottom: 82px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main {
+    padding: 90px 0 114px;
+  }
+
+  .heading {
+    font: var(--font-title-h1);
+  }
+}
+
+@media (min-width: 2560px) {
+  .heading {
+    font: var(--font-title-h2);
+    margin-bottom: 58px;
+  }
+}
