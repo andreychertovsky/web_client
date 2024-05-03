@@ -5,6 +5,12 @@ import { ENV } from "@/shared/config";
 
 const title = "Заголовок";
 const description = "Описание";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
 <!doctype html>
@@ -32,7 +38,7 @@ const description = "Описание";
     />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body id="root">
+  <body id="root" class={className}>
     <slot />
   </body>
 </html>
@@ -140,7 +146,6 @@ const description = "Описание";
   */
   #root {
     height: 100%;
-    background-color: var(--color-main-white);
     isolation: isolate;
   }
 </style>
