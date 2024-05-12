@@ -1,0 +1,39 @@
+---
+import "cropperjs/dist/cropper.min.css";
+
+import { Button } from "@/shared/ui/button";
+import { IconUpload } from "@/shared/assets/icons";
+import { containerStyles } from "@/shared/ui/container";
+
+import photo from "./photo.jpg";
+import styles from "./styles.module.css";
+---
+
+<section class:list={[containerStyles, styles.root]}>
+  <div class={styles.wrapper}>
+    <div class={styles.uploaded}>
+      <img data-image src={photo.src} />
+      <Button class={styles.buttonUpload} variant="secondary" iconOnly>
+        <IconUpload />
+      </Button>
+    </div>
+    <Button
+      class:list={[styles.buttonUpload, styles.buttonUploadFull]}
+      variant="secondary"
+    >
+      Upload new image
+      <IconUpload />
+    </Button>
+  </div>
+</section>
+
+<script>
+  import Cropper from "cropperjs";
+
+  const image = document.querySelector("[data-image]");
+  const cropper = new Cropper(image, {
+    crop(event) {
+      console.log({ details: event.detail });
+    },
+  });
+</script>
