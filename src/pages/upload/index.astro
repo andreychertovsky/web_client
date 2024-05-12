@@ -3,15 +3,18 @@ import { BaseLayout } from "@/layouts";
 import { containerStyles } from "@/shared/ui/container";
 import { NavDesktop } from "@/shared/ui/nav";
 
-import { Upload } from "./_ui/upload";
+import { UploadForm } from "./_ui/upload-form";
 import styles from "./_styles.module.css";
 ---
 
-<BaseLayout class={styles.root}>
+<BaseLayout>
   <header class={containerStyles}>
     <NavDesktop />
   </header>
   <main class={styles.main}>
-    <Upload />
+    <section class:list={[containerStyles, styles.container]}>
+      <h1 class={styles.heading}>Search any products</h1>
+      <UploadForm />
+    </section>
   </main>
 </BaseLayout>
