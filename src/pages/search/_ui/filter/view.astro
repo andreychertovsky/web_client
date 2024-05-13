@@ -1,0 +1,65 @@
+---
+import { IconPlus, IconMinus, IconArrowSmall } from "@/shared/assets/icons";
+import { buttonStyles } from "@/shared/ui/button";
+import { Checkbox } from "@/shared/ui/checkbox";
+
+import styles from "./styles.module.css";
+---
+
+<div class={styles.root}>
+  <div class={styles.bar}>
+    <wc-dropdown
+      class={styles.dropdown}
+      data-class-active={styles.active}
+      data-class-visible={styles.visible}
+    >
+      <button
+        data-trigger
+        class:list={[
+          buttonStyles.root,
+          buttonStyles.variantSecondary,
+          buttonStyles.sizeSmall,
+          styles.trigger,
+        ]}
+      >
+        Filter
+        <IconPlus
+          class:list={[styles.icon, styles.iconPlus, styles.visible]}
+          data-plus
+        />
+        <IconMinus class:list={[styles.icon, styles.iconMinus]} data-minus />
+      </button>
+      <div class:list={[styles.content]} data-content>
+        <label class={styles.label}>
+          Select geolocation
+          <select class={styles.select}>
+            <option value="Global">Global</option>
+          </select>
+          <IconArrowSmall class={styles.selectArrow} />
+        </label>
+        <div class={styles.group}>
+          <p class={styles.label}>Select stores</p>
+          <div class={styles.checkboxGroup}>
+            <Checkbox name="aliexpress">aliexpress</Checkbox>
+            <Checkbox name="amazon">amazon</Checkbox>
+            <Checkbox name="ebay">ebay</Checkbox>
+            <Checkbox name="alibaba">alibaba</Checkbox>
+          </div>
+        </div>
+      </div>
+    </wc-dropdown>
+    <wc-toggle
+      class={styles.labelSecondary}
+      data-class-toggle={styles.reversed}
+    >
+      Sort by:
+      <button class={styles.buttonSort} data-trigger>
+        Price
+        <IconArrowSmall class:list={[styles.buttonSortArrow]} data-subject />
+      </button>
+    </wc-toggle>
+  </div>
+  <p class={styles.supportingText}>230,345 results found</p>
+</div>
+
+<script src="./script.ts"></script>

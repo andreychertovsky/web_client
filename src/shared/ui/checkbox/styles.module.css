@@ -1,0 +1,41 @@
+.checkbox-label {
+  color: var(--color-main-dark-gray);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font: var(--font-text-small);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-label-text {
+  display: inline-block;
+}
+
+.checkbox {
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--color-main-lightgray);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  transform: translateY(2px);
+}
+
+.checkbox:checked {
+  background-color: var(--color-main-yellow1);
+}
+
+.checkbox:checked::before {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url('./icon.svg');
+  margin-left: 4px;
+}
