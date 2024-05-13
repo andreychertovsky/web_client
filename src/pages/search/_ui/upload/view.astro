@@ -9,23 +9,21 @@ import photo from "./photo.jpg";
 import styles from "./styles.module.css";
 ---
 
-<section class:list={[containerStyles, styles.root]}>
-  <div class={styles.wrapper}>
-    <div class={styles.uploaded}>
-      <img data-image src={photo.src} />
-      <Button class={styles.buttonUpload} variant="secondary" iconOnly>
-        <IconUpload />
-      </Button>
-    </div>
-    <Button
-      class:list={[styles.buttonUpload, styles.buttonUploadFull]}
-      variant="secondary"
-    >
-      Upload new image
+<div class={styles.wrapper}>
+  <div class={styles.uploaded}>
+    <img data-image src={photo.src} />
+    <Button class={styles.buttonUpload} variant="secondary" iconOnly>
       <IconUpload />
     </Button>
   </div>
-</section>
+  <Button
+    class:list={[styles.buttonUpload, styles.buttonUploadFull]}
+    variant="secondary"
+  >
+    Upload new image
+    <IconUpload />
+  </Button>
+</div>
 
 <script>
   import Cropper from "cropperjs";

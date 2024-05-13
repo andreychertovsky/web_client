@@ -1,0 +1,15 @@
+---
+import styles from "./styles.module.css";
+
+interface Props {
+  class?: string;
+  name: string;
+}
+
+const { class: className, name } = Astro.props;
+---
+
+<label class:list={[styles.checkboxLabel, className]}>
+  <input type="checkbox" name={name} class={styles.checkbox} />
+  <slot />
+</label>

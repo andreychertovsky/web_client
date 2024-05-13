@@ -1,0 +1,173 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.bar {
+  background-color: var(--color-main-white);
+  border-radius: 64px;
+  display: flex;
+  gap: 77px;
+  align-items: center;
+}
+
+.dropdown {
+
+}
+
+.trigger {
+  --button-background: var(--color-main-lightgray);
+  --button-border-color: var(--color-main-white);
+}
+
+.trigger:hover {
+  --button-border-color: var(--color-main-white);
+}
+
+.trigger.active {
+  --button-background: var(--color-main-yellow1);
+}
+
+.icon {
+  display: none;
+}
+
+.icon-plus {
+  color: var(--color-main-yellow1);
+}
+
+.icon-minus {
+  color: var(--color-main-black);
+}
+
+.content {
+  border-radius: 36px;
+  background-color: var(--color-main-white);
+  position: absolute;
+  margin-top: 12px;
+  padding: 35px 24px 48px;
+  max-width: 358px;
+  width: 100%;
+  gap: 23px;
+  flex-direction: column;
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.label {
+  color: var(--color-main-black);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font: var(--font-link-button-small);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 8px;
+}
+
+.select {
+  appearance: none;
+  background: none;
+  padding: 13px 63px 17px 24px;
+  color: var(--color-main-dark-gray);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font: var(--font-text-small);
+  border-radius: 64px;
+  border: 4px solid var(--color-main-lightgray);
+  background: var(--color-main-white);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 24px;
+  bottom: 25px;
+  color: var(--color-main-yellow1);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  row-gap: 14px;
+}
+
+.label-checkbox {
+  color: var(--color-main-dark-gray);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font: var(--font-text-small);
+}
+
+.checkbox {}
+
+.supporting-text {
+  color: var(--color-main-gray);
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font: var(--font-text-small);
+}
+
+.label-secondary {
+  color: var(--color-main-gray);
+  text-align: right;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font: var(--font-text-small);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.button-sort {
+  appearance: none;
+  background: none;
+  padding: 0 8px 0 8px;
+  margin: 0;
+  border: none;
+  color: var(--color-main-black);
+  text-align: right;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font: var(--font-link-button-small);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-sort-arrow {
+  color: var(--color-main-yellow1);
+}
+
+.reversed {
+  transform: rotate(-180deg);
+}
+
+@media (min-width: 960px) {
+  .root {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .content {
+    max-width: 368px;
+  }
+
+  .bar {
+    padding-right: 28px;
+  }
+}
+
