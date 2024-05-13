@@ -1,0 +1,60 @@
+---
+import {
+  ImageAlibaba,
+  ImageAliexpress,
+  ImageAmazon,
+  ImageEbay,
+  ImageWallmart,
+} from "@/shared/assets/images";
+
+interface Props {
+  name: "alibaba" | "ebay" | "amazon" | "aliexpress" | "wallmart";
+}
+
+const { name } = Astro.props;
+
+import styles from "./styles.module.css";
+---
+
+<>
+  {
+    name === "alibaba" && (
+      <div class={styles.store}>
+        <img class={styles.icon} src={ImageAlibaba.src} alt="Alibaba" />
+        <span class={styles.storeName}>alibaba.com</span>
+      </div>
+    )
+  }
+  {
+    name === "ebay" && (
+      <div class={styles.store}>
+        <img class={styles.icon} src={ImageEbay.src} alt="Ebay" />
+        <span class={styles.storeName}>ebay.com</span>
+      </div>
+    )
+  }
+  {
+    name === "amazon" && (
+      <div class={styles.store}>
+        <img class={styles.icon} src={ImageAmazon.src} alt="Amazon" />
+        <span class={styles.storeName}>amazon.com</span>
+      </div>
+    )
+  }
+  {
+    name === "aliexpress" && (
+      <div class={styles.store}>
+        <img class={styles.icon} src={ImageAliexpress.src} alt="Aliexpress" />
+        <span class={styles.storeName}>aliexpress.com</span>
+      </div>
+    )
+  }
+  {
+    name === "wallmart" && (
+      <div class={styles.store}>
+        <img class={styles.icon} src={ImageWallmart.src} alt="Wallmart" />
+        <span class={styles.storeName}>wallmart.com</span>
+      </div>
+    )
+  }
+</>

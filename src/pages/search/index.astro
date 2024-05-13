@@ -5,6 +5,8 @@ import { NavDesktop } from "@/shared/ui/nav";
 
 import { Upload } from "./_ui/upload";
 import { Filter } from "./_ui/filter";
+import { SearchResults } from "./_ui/search-results";
+
 import styles from "./_styles.module.css";
 ---
 
@@ -15,7 +17,10 @@ import styles from "./_styles.module.css";
   <main class={styles.main}>
     <section class:list={[containerStyles, styles.section]}>
       <Upload />
-      <Filter />
+      <div class={styles.wrapper}>
+        <Filter />
+        <SearchResults />
+      </div>
     </section>
   </main>
 </BaseLayout>

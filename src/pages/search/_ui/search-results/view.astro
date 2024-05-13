@@ -1,0 +1,90 @@
+---
+import { IconSearchImage } from "@/shared/assets/icons";
+
+import Store from "./store.astro";
+import image1 from "./assets/1.jpg";
+import image2 from "./assets/2.jpg";
+import image3 from "./assets/3.jpg";
+
+import styles from "./styles.module.css";
+
+interface Item {
+  imgSrc: string;
+  price: string;
+  store: "alibaba" | "ebay" | "amazon" | "aliexpress" | "wallmart";
+  text: string;
+}
+
+const results: Item[] = [
+  {
+    imgSrc: image1.src as string,
+    price: "$ 250.48",
+    store: "alibaba",
+    text: "Boys Coat Jacket Overcoat Cotton 2022 Luxury Warm Thicken Velvet Winter...",
+  },
+  {
+    imgSrc: image2.src as string,
+    price: "$ 27.37",
+    store: "ebay",
+    text: "Electric Heated Pad Hand Warmer Bag Heating Glove for Outdoor Camping...",
+  },
+  {
+    imgSrc: image3.src as string,
+    price: "$ 3.89 - 5.68",
+    store: "amazon",
+    text: "Jamie Chung Glossy 8X10 Photo Picture Print Image E",
+  },
+  {
+    imgSrc: image2.src as string,
+    price: "$ 3.89 - 5.68",
+    store: "wallmart",
+    text: "Electric Heated Pad Hand Warmer Bag Heating Glove for Outdoor Camping...",
+  },
+  {
+    imgSrc: image1.src as string,
+    price: "$ 270.37",
+    store: "aliexpress",
+    text: "Popular Cargo Coat Half Turtleneck Dressing Male Japan Style Washed Jacket",
+  },
+  {
+    imgSrc: image3.src as string,
+    price: "$ 5.68",
+    store: "wallmart",
+    text: "Boys Coat Jacket Overcoat Cotton 2022 Luxury Warm Thicken Velvet Winter...",
+  },
+  {
+    imgSrc: image1.src as string,
+    price: "$ 250.48",
+    store: "aliexpress",
+    text: "Jamie Chung Glossy 8X10 Photo Picture Print Image E",
+  },
+  {
+    imgSrc: image2.src as string,
+    price: "$ 27.37",
+    store: "alibaba",
+    text: "Electric Heated Pad Hand Warmer Bag Heating Glove for Outdoor Camping...",
+  },
+];
+---
+
+<div class:list={styles.root}>
+  <ul class={styles.list}>
+    {
+      results.map(({ imgSrc, store, price, text }) => (
+        <li class={styles.item}>
+          <img class={styles.image} src={imgSrc} />
+          <div class={styles.wrapper}>
+            <p class:list={[styles.tag]}>{price}</p>
+            <div class={styles.info}>
+              <Store name={store} />
+              <button class={styles.buttonSearch} type="button">
+                <IconSearchImage />
+              </button>
+            </div>
+            <p class={styles.text}>{text}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</div>

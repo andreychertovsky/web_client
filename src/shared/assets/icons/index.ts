@@ -15,4 +15,5 @@ export { default as IconPin } from "./pin.astro";
 export { default as IconPlay } from "./play.astro";
 export { default as IconPlus } from "./plus.astro";
 export { default as IconSearch } from "./search.astro";
+export { default as IconSearchImage } from "./search-image.astro";
 export { default as IconUpload } from "./upload.astro";
