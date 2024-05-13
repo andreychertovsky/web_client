@@ -12,9 +12,20 @@
   gap: 24px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 18px;
+}
+
 @media (min-width: 960px) {
   .main {
     padding: 20px 0 88px;
+  }
+
+  .wrapper {
+    gap: 24px;
   }
 }
 
