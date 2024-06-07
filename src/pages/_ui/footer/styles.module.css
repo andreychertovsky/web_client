@@ -33,7 +33,7 @@
 
 @media (min-width: 960px) {
   .container {
-    padding: 0 88px 47px;
+    padding: 41px 88px 47px;
     flex-direction: row;
     justify-content: space-between;
   }
