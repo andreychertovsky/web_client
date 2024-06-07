@@ -15,41 +15,9 @@ import {
   LINK_TO_CHROME_EXTENSION,
   LINK_TO_GOOGLE_PLAY,
 } from "@/shared/config";
+import { api } from "@/shared/api";
 
-interface Item {
-  question: string;
-  answer: string;
-  opened?: boolean;
-}
-
-const items: Item[] = [
-  {
-    question: "Is it free?",
-    answer:
-      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
-  },
-  {
-    question: "Do you offer an api?",
-    answer:
-      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
-  },
-  {
-    question: "Why can't I see the images?",
-    answer:
-      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
-    opened: true,
-  },
-  {
-    question: "Why do I get a quota error?",
-    answer:
-      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
-  },
-  {
-    question: "Why doesn't my result match up?",
-    answer:
-      "Unfortunately, we can't fix it. This happens if the site on which  the images are stored is configured so that only site visitors have access to images.",
-  },
-];
+const items = await api.faq.getItems();
 ---
 
 <section class={styles.root}>
