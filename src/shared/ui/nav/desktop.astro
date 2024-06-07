@@ -3,10 +3,21 @@ import { IconLang, IconArrowSmall, IconMenu } from "@/shared/assets/icons";
 import { Button, buttonStyles } from "@/shared/ui/button";
 
 import styles from "./styles.module.css";
+
+const currentPathname = Astro.url.pathname;
+const isActive = (pathname) => currentPathname === pathname;
 ---
 
 <nav class:list={[styles.root]}>
-  <img class={styles.logo} src="/logo.png" />
+  {
+    isActive("/") ? (
+      <img class={styles.logo} src="/logo.png" />
+    ) : (
+      <a href="/">
+        <img class={styles.logo} src="/logo.png" />
+      </a>
+    )
+  }
   <button class:list={[styles.buttonLang, styles.mobile]}>
     <IconLang class={styles.iconLang} />
     Eng
@@ -21,14 +32,20 @@ import styles from "./styles.module.css";
     </Button>
   </wc-dialog-open-trigger>
   <ul class:list={[styles.list, styles.desktop]}>
-    <li class:list={[styles.item, styles.active]}>
-      <a class:list={[styles.link, styles.active]}>Home</a>
+    <li class:list={[styles.item, isActive("/") && styles.active]}>
+      <a href="/" class:list={[styles.link, isActive("/") && styles.active]}>
+        Home
+      </a>
     </li>
     <li class={styles.item}>
       <a class={styles.link}>FAQ</a>
     </li>
-    <li class={styles.item}>
-      <a class={styles.link}>Contact us</a>
+    <li class:list={[styles.item, isActive("/contact") && styles.active]}>
+      <a
+        href="/contact"
+        class:list={[styles.link, isActive("/contact") && styles.active]}
+        >Contact us</a
+      >
     </li>
     <li class={styles.item}>
       <button class={styles.buttonLang}>

@@ -3,6 +3,7 @@ import { IconPin, IconMail } from "@/shared/assets/icons";
 import { Button } from "@/shared/ui/button";
 
 import styles from "./styles.module.css";
+import { EMAIL_SUPPORT } from "@/shared/config";
 ---
 
 <div class={styles.root}>
@@ -12,10 +13,14 @@ import styles from "./styles.module.css";
       <IconPin class={styles.textIcon} />
       30 N Gould St Ste R Sheridan, Wyoming 82801
     </p>
-    <p class={styles.textContact}>
+    <a
+      href={`mailto:${EMAIL_SUPPORT}`}
+      class={styles.textContact}
+      target="_blank"
+    >
       <IconMail class={styles.textIcon} />
-      support@productsearch.app
-    </p>
+      {EMAIL_SUPPORT}
+    </a>
   </div>
   <form class={styles.form}>
     <div class={styles.formRow}>
