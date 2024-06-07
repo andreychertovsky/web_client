@@ -20,6 +20,14 @@
 
 .right {}
 
+.link-unstyled {
+  text-decoration: none;
+}
+
+.link-unstyled:hover {
+  text-decoration: none;
+}
+
 @media (min-width: 960px) {
   .heading {
     font: var(--font-title-h4);

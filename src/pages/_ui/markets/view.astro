@@ -1,6 +1,6 @@
 ---
 import { containerStyles } from "@/shared/ui/container";
-import { Button } from "@/shared/ui/button";
+import { buttonStyles } from "@/shared/ui/button";
 import { IconSearch } from "@/shared/assets/icons";
 
 import styles from "./styles.module.css";
@@ -9,10 +9,18 @@ import styles from "./styles.module.css";
 <section class:list={[containerStyles, styles.root]}>
   <div class={styles.left}>
     <h2 class={styles.heading}>Instant search in multiple stores at once</h2>
-    <Button>
+    <a
+      href="/visual-search"
+      class:list={[
+        buttonStyles.root,
+        buttonStyles.sizeRegular,
+        buttonStyles.variantPrimary,
+        styles.linkUnstyled,
+      ]}
+    >
       Let's search
       <IconSearch />
-    </Button>
+    </a>
   </div>
   <div class={styles.right}></div>
 </section>
