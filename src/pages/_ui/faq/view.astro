@@ -10,7 +10,11 @@ import {
 } from "@/shared/assets/icons";
 
 import styles from "./styles.module.css";
-import { LINK_TO_CHROME_EXTENSION } from "@/shared/config";
+import {
+  LINK_TO_APPLE_STORE,
+  LINK_TO_CHROME_EXTENSION,
+  LINK_TO_GOOGLE_PLAY,
+} from "@/shared/config";
 
 interface Item {
   question: string;
@@ -96,12 +100,32 @@ const items: Item[] = [
             <IconChrome />
           </a>
           <div class={styles.bannerStores}>
-            <Button variant="secondary" class={styles.bannerButton} iconOnly>
+            <a
+              class:list={[
+                buttonStyles.root,
+                buttonStyles.sizeRegular,
+                buttonStyles.variantSecondary,
+                buttonStyles.iconOnly,
+                styles.bannerButton,
+              ]}
+              href={LINK_TO_APPLE_STORE}
+              target="_blank"
+            >
               <IconAppStore />
-            </Button>
-            <Button variant="secondary" class={styles.bannerButton} iconOnly>
+            </a>
+            <a
+              class:list={[
+                buttonStyles.root,
+                buttonStyles.sizeRegular,
+                buttonStyles.variantSecondary,
+                buttonStyles.iconOnly,
+                styles.bannerButton,
+              ]}
+              href={LINK_TO_GOOGLE_PLAY}
+              target="_blank"
+            >
               <IconGooglePlay />
-            </Button>
+            </a>
           </div>
         </div>
       </div>
