@@ -1,6 +1,6 @@
 ---
 import { containerStyles } from "@/shared/ui/container";
-import { Button } from "@/shared/ui/button";
+import { Button, buttonStyles } from "@/shared/ui/button";
 import {
   IconSearch,
   IconEdge,
@@ -10,6 +10,7 @@ import {
 } from "@/shared/assets/icons";
 
 import styles from "./styles.module.css";
+import { LINK_TO_CHROME_EXTENSION } from "@/shared/config";
 
 interface Item {
   question: string;
@@ -79,14 +80,21 @@ const items: Item[] = [
             Let's search
             <IconSearch />
           </Button>
-          <Button
-            variant="secondary"
-            class:list={[styles.bannerButton, styles.buttonExtension]}
+          <a
+            href={LINK_TO_CHROME_EXTENSION}
+            class:list={[
+              buttonStyles.root,
+              buttonStyles.sizeRegular,
+              buttonStyles.variantSecondary,
+              styles.bannerButton,
+              styles.buttonExtension,
+            ]}
+            target="_blank"
           >
             Browser extension
             <IconEdge />
             <IconChrome />
-          </Button>
+          </a>
           <div class={styles.bannerStores}>
             <Button variant="secondary" class={styles.bannerButton} iconOnly>
               <IconAppStore />

@@ -163,10 +163,14 @@
 .banner-button {
   --button-background: none;
   --button-border-color: var(--color-main-yellow2);
+
+  text-decoration: none;
 }
 
 .banner-button:hover {
   --button-border-color: var(--color-main-red1);
+
+  text-decoration: none;
 }
 
 .banner-stores {
