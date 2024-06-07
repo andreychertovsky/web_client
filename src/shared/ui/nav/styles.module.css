@@ -103,6 +103,14 @@
   padding: 14px 24px;
 }
 
+.link-unstyled {
+  text-decoration: none;
+}
+
+.link-unstyled:hover {
+  text-decoration: none;
+}
+
 @media (min-width: 960px) {
   .root {
     gap: 32px;

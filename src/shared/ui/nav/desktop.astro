@@ -1,6 +1,6 @@
 ---
 import { IconLang, IconArrowSmall, IconMenu } from "@/shared/assets/icons";
-import { Button } from "@/shared/ui/button";
+import { Button, buttonStyles } from "@/shared/ui/button";
 
 import styles from "./styles.module.css";
 ---
@@ -40,6 +40,16 @@ import styles from "./styles.module.css";
   </ul>
   <div class:list={[styles.actions, styles.desktop]}>
     <Button variant="secondary" size="small">Sign up</Button>
-    <Button size="small">Let's search</Button>
+    <a
+      href="/visual-search"
+      class:list={[
+        buttonStyles.root,
+        buttonStyles.sizeSmall,
+        buttonStyles.variantPrimary,
+        styles.linkUnstyled,
+      ]}
+    >
+      Let's search
+    </a>
   </div>
 </nav>
