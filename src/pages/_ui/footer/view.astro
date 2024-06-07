@@ -1,0 +1,26 @@
+---
+import styles from "./styles.module.css";
+
+interface Props {
+  className?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<footer class:list={[styles.root, className]}>
+  <div class={styles.container}>
+    <p class={styles.copy}>&copy; Product Search. All Rights Reserved</p>
+    <ul class={styles.list}>
+      <li class={styles.item}>
+        <a href="/terms" class={styles.link}>Terms & Conditions</a>
+      </li>
+      <li class={styles.item}>
+        <a href="/privacy" class={styles.link}>Privacy Policy</a>
+      </li>
+      <li class={styles.item}>
+        <a href="/cookie" class={styles.link}>Cookies</a>
+      </li>
+    </ul>
+  </div>
+</footer>
