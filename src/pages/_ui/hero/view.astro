@@ -1,5 +1,5 @@
 ---
-import { Button } from "@/shared/ui/button";
+import { Button, buttonStyles } from "@/shared/ui/button";
 import { IconSearch, IconPlay } from "@/shared/assets/icons";
 import { containerStyles } from "@/shared/ui/container";
 
@@ -10,10 +10,18 @@ import styles from "./styles.module.css";
   <div class={styles.left}>
     <h1 class={styles.heading}>Find any products by image</h1>
     <div class={styles.actions}>
-      <Button>
+      <a
+        href="/visual-search"
+        class:list={[
+          buttonStyles.root,
+          buttonStyles.sizeRegular,
+          buttonStyles.variantPrimary,
+          styles.link,
+        ]}
+      >
         Try it now
         <IconSearch />
-      </Button>
+      </a>
       <Button class={styles.mobile} iconOnly variant="secondary">
         <IconPlay class={styles.iconPlay} />
       </Button>
