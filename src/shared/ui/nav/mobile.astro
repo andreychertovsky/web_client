@@ -5,7 +5,7 @@ import {
   IconClose,
   IconSearch,
 } from "@/shared/assets/icons";
-import { Button } from "@/shared/ui/button";
+import { Button, buttonStyles } from "@/shared/ui/button";
 
 import styles from "./styles.module.css";
 ---
@@ -37,9 +37,17 @@ import styles from "./styles.module.css";
   </ul>
   <div class={styles.actions}>
     <Button class={styles.buttonAction} variant="secondary">Sign up</Button>
-    <Button>
+    <a
+      href="/visual-search"
+      class:list={[
+        buttonStyles.root,
+        buttonStyles.sizeRegular,
+        buttonStyles.variantPrimary,
+        styles.linkUnstyled,
+      ]}
+    >
       Let's search
       <IconSearch />
-    </Button>
+    </a>
   </div>
 </nav>
