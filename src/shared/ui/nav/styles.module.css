@@ -85,6 +85,11 @@
 .link {
   font: var(--font-title-h5);
   color: var(--color-main-gray);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
 }
 
 .link.active {

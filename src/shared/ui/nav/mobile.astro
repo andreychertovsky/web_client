@@ -8,6 +8,8 @@ import {
 import { Button, buttonStyles } from "@/shared/ui/button";
 
 import styles from "./styles.module.css";
+
+const canSignUp = true;
 ---
 
 <nav class:list={[styles.root, styles.wrapper]}>
@@ -26,17 +28,23 @@ import styles from "./styles.module.css";
   </div>
   <ul class={styles.list}>
     <li class:list={[styles.item, styles.active]}>
-      <a class:list={[styles.link, styles.active]}>Home</a>
+      <a href="/" class:list={[styles.link, styles.active]}>Home</a>
     </li>
     <li class={styles.item}>
       <a class={styles.link}>FAQ</a>
     </li>
     <li class={styles.item}>
-      <a class={styles.link}>Contact us</a>
+      <a href="/contact" class={styles.link}>Contact us</a>
     </li>
   </ul>
   <div class={styles.actions}>
-    <Button class={styles.buttonAction} variant="secondary">Sign up</Button>
+    {
+      canSignUp && (
+        <Button class={styles.buttonAction} variant="secondary">
+          Sign up
+        </Button>
+      )
+    }
     <a
       href="/visual-search"
       class:list={[
