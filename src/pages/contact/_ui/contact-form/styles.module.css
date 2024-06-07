@@ -29,6 +29,11 @@
   font-variant-numeric: lining-nums proportional-nums;
   font-feature-settings: 'liga' off;
   z-index: 1;
+  text-decoration: none;
+}
+
+.text-contact:hover {
+  text-decoration: none;
 }
 
 .text-icon {
