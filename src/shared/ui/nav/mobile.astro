@@ -10,15 +10,25 @@ import { Button, buttonStyles } from "@/shared/ui/button";
 import styles from "./styles.module.css";
 
 const canSignUp = true;
+const currentPathname = Astro.url.pathname;
+const isActive = (pathname) => currentPathname === pathname;
 ---
 
 <nav class:list={[styles.root, styles.wrapper]}>
   <div class={styles.header}>
-    <img class={styles.logo} src="/logo.png" />
+    {
+      isActive("/") ? (
+        <img class={styles.logo} src="/logo.png" />
+      ) : (
+        <a href="/">
+          <img class={styles.logo} src="/logo.png" />
+        </a>
+      )
+    }
     <button class={styles.buttonLang}>
-      <IconLang class={styles.iconLang} /> Eng <IconArrowSmall
-        class={styles.iconArrow}
-      />
+      <IconLang class={styles.iconLang} />
+      Eng
+      <IconArrowSmall class={styles.iconArrow} />
     </button>
     <wc-dialog-close-trigger data-name="menu" class={styles.buttonMenu}>
       <Button iconOnly size="xsmall">
