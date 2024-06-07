@@ -25,6 +25,14 @@
   gap: 24px;
 }
 
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
 .icon-play {
   color: var(--color-main-yellow1);
 }
