@@ -1,7 +1,9 @@
 ---
 import { BaseLayout } from "@/layouts";
 import { containerStyles } from "@/shared/ui/container";
-import { NavDesktop } from "@/shared/ui/nav";
+import { NavDesktop, NavMobile } from "@/shared/ui/nav";
+import { Dialog } from "@/shared/ui/dialog";
+import { DIALOGS } from "@/shared/config";
 
 import { Footer } from "../_ui/footer";
 
@@ -26,4 +28,7 @@ import styles from "./_styles.module.css";
     </section>
   </main>
   <Footer />
+  <Dialog name={DIALOGS.MENU}>
+    <NavMobile />
+  </Dialog>
 </BaseLayout>

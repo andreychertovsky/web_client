@@ -6,6 +6,7 @@ import {
   IconSearch,
 } from "@/shared/assets/icons";
 import { Button, buttonStyles } from "@/shared/ui/button";
+import { DIALOGS } from "@/shared/config";
 
 import styles from "./styles.module.css";
 
@@ -30,20 +31,34 @@ const isActive = (pathname) => currentPathname === pathname;
       Eng
       <IconArrowSmall class={styles.iconArrow} />
     </button>
-    <wc-dialog-close-trigger data-name="menu" class={styles.buttonMenu}>
+    <wc-dialog-close-trigger data-name={DIALOGS.MENU} class={styles.buttonMenu}>
       <Button iconOnly size="xsmall">
         <IconClose />
       </Button>
     </wc-dialog-close-trigger>
   </div>
   <ul class={styles.list}>
-    <li class:list={[styles.item, styles.active]}>
+    <li class:list={[styles.item, isActive("/") && styles.active]}>
       <a href="/" class:list={[styles.link, styles.active]}>Home</a>
     </li>
     <li class={styles.item}>
-      <a class={styles.link}>FAQ</a>
+      {
+        isActive("/") ? (
+          <wc-dialog-close-trigger data-name={DIALOGS.MENU}>
+            <wc-scroll-to-trigger data-scroll-to="faq">
+              <button class:list={[styles.link, styles.buttonGhost]}>
+                FAQ
+              </button>
+            </wc-scroll-to-trigger>
+          </wc-dialog-close-trigger>
+        ) : (
+          <a href="/#faq" class={styles.link}>
+            FAQ
+          </a>
+        )
+      }
     </li>
-    <li class={styles.item}>
+    <li class:list={[styles.item, isActive("/contact") && styles.active]}>
       <a href="/contact" class={styles.link}>Contact us</a>
     </li>
   </ul>

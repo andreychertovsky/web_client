@@ -96,6 +96,14 @@
   color: var(--color-main-black);
 }
 
+.button-ghost {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
 .desktop {
   display: none;
 }
