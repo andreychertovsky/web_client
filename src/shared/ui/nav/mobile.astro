@@ -7,6 +7,7 @@ import {
 } from "@/shared/assets/icons";
 import { Button, buttonStyles } from "@/shared/ui/button";
 import { DIALOGS } from "@/shared/config";
+import { containerStyles } from "@/shared/ui/container";
 
 import styles from "./styles.module.css";
 
@@ -15,72 +16,77 @@ const currentPathname = Astro.url.pathname;
 const isActive = (pathname) => currentPathname === pathname;
 ---
 
-<nav class:list={[styles.root, styles.wrapper]}>
-  <div class={styles.header}>
-    {
-      isActive("/") ? (
-        <img class={styles.logo} src="/logo.png" />
-      ) : (
-        <a href="/">
-          <img class={styles.logo} src="/logo.png" />
-        </a>
-      )
-    }
-    <button class={styles.buttonLang}>
-      <IconLang class={styles.iconLang} />
-      Eng
-      <IconArrowSmall class={styles.iconArrow} />
-    </button>
-    <wc-dialog-close-trigger data-name={DIALOGS.MENU} class={styles.buttonMenu}>
-      <Button iconOnly size="xsmall">
-        <IconClose />
-      </Button>
-    </wc-dialog-close-trigger>
-  </div>
-  <ul class={styles.list}>
-    <li class:list={[styles.item, isActive("/") && styles.active]}>
-      <a href="/" class:list={[styles.link, styles.active]}>Home</a>
-    </li>
-    <li class={styles.item}>
+<div class:list={[containerStyles, styles.fullHeight]}>
+  <nav class:list={[styles.root, styles.wrapper]}>
+    <div class={styles.header}>
       {
         isActive("/") ? (
-          <wc-dialog-close-trigger data-name={DIALOGS.MENU}>
-            <wc-scroll-to-trigger data-scroll-to="faq">
-              <button class:list={[styles.link, styles.buttonGhost]}>
-                FAQ
-              </button>
-            </wc-scroll-to-trigger>
-          </wc-dialog-close-trigger>
+          <img class={styles.logo} src="/logo.png" />
         ) : (
-          <a href="/#faq" class={styles.link}>
-            FAQ
+          <a href="/">
+            <img class={styles.logo} src="/logo.png" />
           </a>
         )
       }
-    </li>
-    <li class:list={[styles.item, isActive("/contact") && styles.active]}>
-      <a href="/contact" class={styles.link}>Contact us</a>
-    </li>
-  </ul>
-  <div class={styles.actions}>
-    {
-      canSignUp && (
-        <Button class={styles.buttonAction} variant="secondary">
-          Sign up
+      <button class={styles.buttonLang}>
+        <IconLang class={styles.iconLang} />
+        Eng
+        <IconArrowSmall class={styles.iconArrow} />
+      </button>
+      <wc-dialog-close-trigger
+        data-name={DIALOGS.MENU}
+        class={styles.buttonMenu}
+      >
+        <Button iconOnly size="xsmall">
+          <IconClose />
         </Button>
-      )
-    }
-    <a
-      href="/visual-search"
-      class:list={[
-        buttonStyles.root,
-        buttonStyles.sizeRegular,
-        buttonStyles.variantPrimary,
-        styles.linkUnstyled,
-      ]}
-    >
-      Let's search
-      <IconSearch />
-    </a>
-  </div>
-</nav>
+      </wc-dialog-close-trigger>
+    </div>
+    <ul class={styles.list}>
+      <li class:list={[styles.item, isActive("/") && styles.active]}>
+        <a href="/" class:list={[styles.link, styles.active]}>Home</a>
+      </li>
+      <li class={styles.item}>
+        {
+          isActive("/") ? (
+            <wc-dialog-close-trigger data-name={DIALOGS.MENU}>
+              <wc-scroll-to-trigger data-scroll-to="faq">
+                <button class:list={[styles.link, styles.buttonGhost]}>
+                  FAQ
+                </button>
+              </wc-scroll-to-trigger>
+            </wc-dialog-close-trigger>
+          ) : (
+            <a href="/#faq" class={styles.link}>
+              FAQ
+            </a>
+          )
+        }
+      </li>
+      <li class:list={[styles.item, isActive("/contact") && styles.active]}>
+        <a href="/contact" class={styles.link}>Contact us</a>
+      </li>
+    </ul>
+    <div class={styles.actions}>
+      {
+        canSignUp && (
+          <Button class={styles.buttonAction} variant="secondary">
+            Sign up
+          </Button>
+        )
+      }
+      <a
+        href="/visual-search"
+        class:list={[
+          buttonStyles.root,
+          buttonStyles.sizeRegular,
+          buttonStyles.variantPrimary,
+          styles.linkUnstyled,
+        ]}
+      >
+        Let's search
+        <IconSearch />
+      </a>
+    </div>
+  </nav>
+</div>

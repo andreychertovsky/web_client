@@ -2,6 +2,7 @@
 import { Button, buttonStyles } from "@/shared/ui/button";
 import { IconSearch, IconPlay } from "@/shared/assets/icons";
 import { containerStyles } from "@/shared/ui/container";
+import { DIALOGS } from "@/shared/config";
 
 import styles from "./styles.module.css";
 ---
@@ -22,13 +23,17 @@ import styles from "./styles.module.css";
         Try it now
         <IconSearch />
       </a>
-      <Button class={styles.mobile} iconOnly variant="secondary">
-        <IconPlay class={styles.iconPlay} />
-      </Button>
-      <Button class={styles.desktop} variant="secondary">
-        Watch video
-        <IconPlay class={styles.iconPlay} />
-      </Button>
+      <wc-dialog-open-trigger data-name={DIALOGS.VIDEO}>
+        <Button class={styles.mobile} iconOnly variant="secondary">
+          <IconPlay class={styles.iconPlay} />
+        </Button>
+      </wc-dialog-open-trigger>
+      <wc-dialog-open-trigger data-name={DIALOGS.VIDEO}>
+        <Button class={styles.desktop} variant="secondary">
+          Watch video
+          <IconPlay class={styles.iconPlay} />
+        </Button>
+      </wc-dialog-open-trigger>
     </div>
   </div>
   <div class={styles.right}></div>

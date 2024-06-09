@@ -10,4 +10,6 @@ export const SECTIONS = {
 };
 export const DIALOGS = {
   MENU: "menu",
+  VIDEO: "video",
 };
+export const YOUTUBE_VIDEO_ID = "guJLfqTFfIw";

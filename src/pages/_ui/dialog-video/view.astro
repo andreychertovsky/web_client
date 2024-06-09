@@ -1,0 +1,29 @@
+---
+import { Dialog } from "@/shared/ui/dialog";
+import { containerStyles } from "@/shared/ui/container";
+import { DIALOGS, YOUTUBE_VIDEO_ID } from "@/shared/config";
+import { containerStyles } from "@/shared/ui/container";
+import { IconClose } from "@/shared/assets/icons";
+import { Button } from "@/shared/ui/button";
+
+import styles from "./styles.module.css";
+---
+
+<Dialog name={DIALOGS.VIDEO} class={styles.root}>
+  <header class={styles.header}>
+    <wc-dialog-close-trigger data-name={DIALOGS.VIDEO}>
+      <Button
+        autofocus
+        type="button"
+        iconOnly
+        variant="tertiary-gray"
+        class={styles.button}
+      >
+        <IconClose />
+      </Button>
+    </wc-dialog-close-trigger>
+  </header>
+  <div class={containerStyles}>
+    <lite-youtube videoid={YOUTUBE_VIDEO_ID}></lite-youtube>
+  </div>
+</Dialog>
