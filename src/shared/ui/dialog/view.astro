@@ -14,9 +14,7 @@ const { class: className, name } = Astro.props;
 
 <wc-dialog data-name={name}>
   <dialog class:list={[styles.root, className]}>
-    <div class:list={[containerStyles, styles.wrapper]}>
-      <slot />
-    </div>
+    <slot />
   </dialog>
 </wc-dialog>
 

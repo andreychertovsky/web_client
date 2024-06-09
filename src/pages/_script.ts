@@ -1,3 +1,5 @@
+import "@justinribeiro/lite-youtube";
+
 import { scrollToEvent } from "@/entities/scroll";
 
 import { SECTIONS } from "@/shared/config";
