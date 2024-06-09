@@ -1,4 +1,18 @@
-import { closeDialogEvent, openDialogEvent } from "@/shared/lib/event-bus";
+import { type Callback, bus } from "@/shared/lib/event-bus";
+
+export const openDialogEvent = {
+  subscribe: (callback: Callback<{ name: string }>) =>
+    bus.subscribe("dialog-opened", callback),
+  broadcast: ({ name }: { name: string }) =>
+    bus.broadcast("dialog-opened", { name }),
+};
+
+export const closeDialogEvent = {
+  subscribe: (callback: Callback<{ name: string }>) =>
+    bus.subscribe("dialog-closed", callback),
+  broadcast: ({ name }: { name: string }) =>
+    bus.broadcast("dialog-closed", { name }),
+};
 
 class Dialog extends HTMLElement {
   constructor() {

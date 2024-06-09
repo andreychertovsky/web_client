@@ -14,102 +14,105 @@ import {
   LINK_TO_APPLE_STORE,
   LINK_TO_CHROME_EXTENSION,
   LINK_TO_GOOGLE_PLAY,
+  SECTIONS,
 } from "@/shared/config";
 import { api } from "@/shared/api";
 
 const items = await api.faq.getItems();
 ---
 
-<section class={styles.root}>
-  <div class:list={[containerStyles, styles.container]}>
-    <div class={styles.wrapper}>
-      <div class={styles.left}>
-        <h3 class={styles.heading}>Frequently asked questions</h3>
-        <p class={styles.supportingText}>
-          If you can't find the answer to your question, please
-          <a class={styles.link} href="/contact">Contact us</a>.
-        </p>
-      </div>
-      <div class={styles.right}>
-        {
-          items.map(({ question, answer, opened }, index) => (
-            <details open={opened} class={styles.details}>
-              <summary class={styles.summary}>
-                <span class={styles.number}>0{index + 1}.</span>
-                <span>{question}</span>
-              </summary>
-              <p class={styles.text}>{answer}</p>
-            </details>
-          ))
-        }
-      </div>
-    </div>
-    <div class={styles.banner}>
-      <div class={styles.bannerWrapper}>
-        <p class={styles.bannerTitle}>Want to try it now?</p>
-        <div class={styles.bannerActions}>
-          <a
-            href="/visual-search"
-            class:list={[
-              buttonStyles.root,
-              buttonStyles.sizeRegular,
-              buttonStyles.variantBlack,
-              styles.buttonSearch,
-              styles.linkUnstyled,
-            ]}
-          >
-            Let's search
-            <IconSearch />
-          </a>
-          <a
-            href={LINK_TO_CHROME_EXTENSION}
-            class:list={[
-              buttonStyles.root,
-              buttonStyles.sizeRegular,
-              buttonStyles.variantSecondary,
-              styles.bannerButton,
-              styles.buttonExtension,
-              styles.linkUnstyled,
-            ]}
-            target="_blank"
-          >
-            Browser extension
-            <IconEdge />
-            <IconChrome />
-          </a>
-          <div class={styles.bannerStores}>
-            <a
-              class:list={[
-                buttonStyles.root,
-                buttonStyles.sizeRegular,
-                buttonStyles.variantSecondary,
-                buttonStyles.iconOnly,
-                styles.bannerButton,
-                styles.linkUnstyled,
-              ]}
-              href={LINK_TO_APPLE_STORE}
-              target="_blank"
-            >
-              <IconAppStore />
-            </a>
-            <a
-              class:list={[
-                buttonStyles.root,
-                buttonStyles.sizeRegular,
-                buttonStyles.variantSecondary,
-                buttonStyles.iconOnly,
-                styles.bannerButton,
-                styles.linkUnstyled,
-              ]}
-              href={LINK_TO_GOOGLE_PLAY}
-              target="_blank"
-            >
-              <IconGooglePlay />
-            </a>
-          </div>
+<wc-scroll-to-section data-section={SECTIONS.FAQ}>
+  <section class={styles.root}>
+    <div class:list={[containerStyles, styles.container]}>
+      <div class={styles.wrapper}>
+        <div class={styles.left}>
+          <h3 class={styles.heading}>Frequently asked questions</h3>
+          <p class={styles.supportingText}>
+            If you can't find the answer to your question, please
+            <a class={styles.link} href="/contact">Contact us</a>.
+          </p>
+        </div>
+        <div class={styles.right}>
+          {
+            items.map(({ question, answer, opened }, index) => (
+              <details open={opened} class={styles.details}>
+                <summary class={styles.summary}>
+                  <span class={styles.number}>0{index + 1}.</span>
+                  <span>{question}</span>
+                </summary>
+                <p class={styles.text}>{answer}</p>
+              </details>
+            ))
+          }
         </div>
       </div>
-      <div class={styles.bannerBackground}></div>
+      <div class={styles.banner}>
+        <div class={styles.bannerWrapper}>
+          <p class={styles.bannerTitle}>Want to try it now?</p>
+          <div class={styles.bannerActions}>
+            <a
+              href="/visual-search"
+              class:list={[
+                buttonStyles.root,
+                buttonStyles.sizeRegular,
+                buttonStyles.variantBlack,
+                styles.buttonSearch,
+                styles.linkUnstyled,
+              ]}
+            >
+              Let's search
+              <IconSearch />
+            </a>
+            <a
+              href={LINK_TO_CHROME_EXTENSION}
+              class:list={[
+                buttonStyles.root,
+                buttonStyles.sizeRegular,
+                buttonStyles.variantSecondary,
+                styles.bannerButton,
+                styles.buttonExtension,
+                styles.linkUnstyled,
+              ]}
+              target="_blank"
+            >
+              Browser extension
+              <IconEdge />
+              <IconChrome />
+            </a>
+            <div class={styles.bannerStores}>
+              <a
+                class:list={[
+                  buttonStyles.root,
+                  buttonStyles.sizeRegular,
+                  buttonStyles.variantSecondary,
+                  buttonStyles.iconOnly,
+                  styles.bannerButton,
+                  styles.linkUnstyled,
+                ]}
+                href={LINK_TO_APPLE_STORE}
+                target="_blank"
+              >
+                <IconAppStore />
+              </a>
+              <a
+                class:list={[
+                  buttonStyles.root,
+                  buttonStyles.sizeRegular,
+                  buttonStyles.variantSecondary,
+                  buttonStyles.iconOnly,
+                  styles.bannerButton,
+                  styles.linkUnstyled,
+                ]}
+                href={LINK_TO_GOOGLE_PLAY}
+                target="_blank"
+              >
+                <IconGooglePlay />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class={styles.bannerBackground}></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</wc-scroll-to-section>

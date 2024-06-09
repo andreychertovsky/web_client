@@ -3,6 +3,7 @@ import { IconLang, IconArrowSmall, IconMenu } from "@/shared/assets/icons";
 import { Button, buttonStyles } from "@/shared/ui/button";
 
 import styles from "./styles.module.css";
+import { DIALOGS } from "@/shared/config";
 
 const currentPathname = Astro.url.pathname;
 const isActive = (pathname) => currentPathname === pathname;
@@ -24,7 +25,7 @@ const isActive = (pathname) => currentPathname === pathname;
     <IconArrowSmall class={styles.iconArrow} />
   </button>
   <wc-dialog-open-trigger
-    data-name="menu"
+    data-name={DIALOGS.MENU}
     class:list={[styles.buttonMenu, styles.mobile]}
   >
     <Button iconOnly size="xsmall">
@@ -38,7 +39,17 @@ const isActive = (pathname) => currentPathname === pathname;
       </a>
     </li>
     <li class={styles.item}>
-      <a class={styles.link}>FAQ</a>
+      {
+        isActive("/") ? (
+          <wc-scroll-to-trigger data-scroll-to="faq">
+            <button class:list={[styles.link, styles.buttonGhost]}>FAQ</button>
+          </wc-scroll-to-trigger>
+        ) : (
+          <a href="/#faq" class={styles.link}>
+            FAQ
+          </a>
+        )
+      }
     </li>
     <li class:list={[styles.item, isActive("/contact") && styles.active]}>
       <a

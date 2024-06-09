@@ -4,6 +4,7 @@ import { BaseLayout } from "@/layouts";
 import { containerStyles } from "@/shared/ui/container";
 import { Dialog } from "@/shared/ui/dialog";
 import { NavMobile, NavDesktop } from "@/shared/ui/nav";
+import { DIALOGS } from "@/shared/config";
 
 import { Hero } from "./_ui/hero";
 import { Upload } from "./_ui/upload";
@@ -27,7 +28,11 @@ import styles from "./_styles.module.css";
     <FAQ />
   </main>
   <Footer />
-  <Dialog name="menu">
+  <Dialog name={DIALOGS.MENU}>
     <NavMobile />
   </Dialog>
 </BaseLayout>
+
+<script src="@/entities/scroll/ui/wc-scroll-to-trigger/index.ts"></script>
+<script src="@/entities/scroll/ui/wc-scroll-to-section/index.ts"></script>
+<script src="./_script.ts"></script>
