@@ -17,3 +17,8 @@ export { default as IconPlus } from "./plus.astro";
 export { default as IconSearch } from "./search.astro";
 export { default as IconSearchImage } from "./search-image.astro";
 export { default as IconUpload } from "./upload.astro";
+export { default as IconAlibaba } from "./alibaba.astro";
+export { default as IconAmazon } from "./amazon.astro";
+export { default as IconAliexpress } from "./aliexpress.astro";
+export { default as IconEbay } from "./ebay.astro";
+export { default as IconWalmart } from "./walmart.astro";

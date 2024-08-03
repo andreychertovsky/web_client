@@ -4,10 +4,63 @@ import { buttonStyles } from "@/shared/ui/button";
 import { IconSearch } from "@/shared/assets/icons";
 
 import styles from "./styles.module.css";
+
+import ImageSlide1 from "@/shared/assets/images/slide_1.png";
+import ImageSlide2 from "@/shared/assets/images/slide_2.png";
+import ImageSlide3 from "@/shared/assets/images/slide_3.png";
+import ImageSlide4 from "@/shared/assets/images/slide_4.png";
+import ImageSlide5 from "@/shared/assets/images/slide_5.png";
 ---
 
-<section class:list={[containerStyles, styles.root]}>
-  <div class={styles.left}>
+<section class:list={[containerStyles, styles.root, "home__markets"]}>
+  <div class={styles.top}>
+    <div class={styles.slider}>
+      <div class={styles.trackContainer}>
+        <div class={styles.track}>
+          <div class={styles.slide}>
+            <img src={ImageSlide1.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide2.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide3.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide4.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide5.src} alt="slide" />
+          </div>
+          <div class={styles.slide}>
+            <img src={ImageSlide1.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide2.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide3.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide4.src} alt="slide" />
+          </div>
+
+          <div class={styles.slide}>
+            <img src={ImageSlide5.src} alt="slide" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class={styles.bottom}>
     <h2 class={styles.heading}>Instant search in multiple stores at once</h2>
     <a
       href="/visual-search"
@@ -16,11 +69,11 @@ import styles from "./styles.module.css";
         buttonStyles.sizeRegular,
         buttonStyles.variantPrimary,
         styles.linkUnstyled,
+        styles.linkSearch,
       ]}
     >
       Let's search
       <IconSearch />
     </a>
   </div>
-  <div class={styles.right}></div>
 </section>

@@ -1,10 +1,11 @@
 ---
 import { containerStyles } from "@/shared/ui/container";
+import ImageUpload from '@/shared/assets/images/upload.png'
 
 import styles from "./styles.module.css";
 ---
 
-<section class:list={[containerStyles, styles.root]}>
+<section class:list={[containerStyles, styles.root, 'home__upload']}>
   <div class={styles.left}>
     <h2 class={styles.heading}>Upload an image or take photo using the app</h2>
     <p class={styles.supportingText}>
@@ -13,5 +14,8 @@ import styles from "./styles.module.css";
       gap between you and the perfect find.
     </p>
   </div>
-  <div class={styles.right}></div>
+
+  <img class:list={[styles.image, styles.logo]} src='/logo.png' alt="">
+  <img class:list={[styles.image, styles.upload]} src={ImageUpload.src} alt="">
+
 </section>

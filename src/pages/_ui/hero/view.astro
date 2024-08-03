@@ -1,13 +1,34 @@
 ---
 import { Button, buttonStyles } from "@/shared/ui/button";
-import { IconSearch, IconPlay } from "@/shared/assets/icons";
+import {
+  IconSearch,
+  IconPlay,
+  IconAliexpress,
+  IconAlibaba,
+  IconWalmart,
+  IconEbay,
+  IconAmazon,
+} from "@/shared/assets/icons";
 import { containerStyles } from "@/shared/ui/container";
 import { DIALOGS } from "@/shared/config";
 
 import styles from "./styles.module.css";
+
+import One from "@/shared/assets/images/111.png";
+import Two from "@/shared/assets/images/222.png";
+// import Three from '@/shared/assets/images/333.png'
+import Three from "@/shared/assets/videos/preview.mp4";
+import Four from "@/shared/assets/images/444.png";
+import Five from "@/shared/assets/images/555.png";
+
+import ProductOne from "@/shared/assets/images/product_1.png";
+import ProductTwo from "@/shared/assets/images/product_2.png";
+import ProductThree from "@/shared/assets/images/product_3.png";
+import ProductFour from "@/shared/assets/images/product_4.png";
+import ProductFive from "@/shared/assets/images/product_5.png";
 ---
 
-<section class:list={[containerStyles, styles.root]}>
+<section class:list={[containerStyles, styles.root, "home__hero"]}>
   <div class={styles.left}>
     <h1 class={styles.heading}>Find any products by image</h1>
     <div class={styles.actions}>
@@ -36,5 +57,98 @@ import styles from "./styles.module.css";
       </wc-dialog-open-trigger>
     </div>
   </div>
-  <div class={styles.right}></div>
+
+  <div class={styles.right}>
+    <!-- <img class:list={[styles.card, styles.video]} src={Three.src} alt=""> -->
+    <div class={`${styles.card} ${styles.video}`}>
+      <div class={styles.cardInner}>
+        <div><video src={Three} class={styles.cardImage} muted></video></div>
+
+        <div class={styles.cardBack}>
+          <div class={styles.cardContent}>
+            <img
+              src={ProductOne.src}
+              class:list={[styles.cardBackImage, styles.cardAmazonImage]}
+              alt="Product"
+            />
+            <IconAmazon class:list={[styles.cardIcon, styles.iconAmazon]} />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class={styles.card}>
+      <div class={styles.cardInner}>
+        <div class={styles.cardImage}>
+          <img src={Two.src} alt="Card 2" />
+        </div>
+        <div class={styles.cardBack}>
+          <div class={styles.cardContent}>
+            <img
+              src={ProductTwo.src}
+              class:list={[styles.cardBackImage, styles.cardAlibabaImage]}
+              alt="Product"
+            />
+            <IconAlibaba class:list={[styles.cardIcon, styles.iconAlibaba]} />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class={styles.card}>
+      <div class={styles.cardInner}>
+        <div class={styles.cardImage}>
+          <img src={One.src} alt="Card 1" />
+        </div>
+        <div class={styles.cardBack}>
+          <div class={styles.cardContent}>
+            <img
+              src={ProductThree.src}
+              class:list={[styles.cardBackImage, styles.cardWalmartImage]}
+              alt="Product"
+            />
+            <IconWalmart class:list={[styles.cardIcon, styles.iconWalmart]} />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class={styles.card}>
+      <div class={styles.cardInner}>
+        <div class={styles.cardImage}>
+          <img src={Four.src} alt="Card 4" />
+        </div>
+        <div class={styles.cardBack}>
+          <div class={styles.cardContent}>
+            <img
+              src={ProductFive.src}
+              class:list={[styles.cardBackImage, styles.cardEbayImage]}
+              alt="Product"
+            />
+            <IconEbay class:list={[styles.cardIcon, styles.iconEbay]} />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class={styles.card}>
+      <div class={styles.cardInner}>
+        <div class={styles.cardImage}>
+          <img src={Five.src} alt="Card 5" />
+        </div>
+        <div class={styles.cardBack}>
+          <div class={styles.cardContent}>
+            <img
+              src={ProductFour.src}
+              class:list={[styles.cardBackImage, styles.cardAliexpressImage]}
+              alt="Product"
+            />
+            <IconAliexpress
+              class:list={[styles.cardIcon, styles.iconAliexpress]}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

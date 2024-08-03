@@ -1,7 +1,59 @@
+/* 
+:root,
+body,
+html {
+  font-size: calc(6px + (20 - 6) * ((100vw - 600px) / (1920 - 600)));
+}
+
+@media only screen and (min-width: 1920px) {
+  :root,
+  body,
+  html {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  :root,
+  body,
+  html {
+    font-size: calc(1vw + 1vh);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :root,
+  body,
+  html {
+    font-size: calc(1.6vw + 1.6vh);
+  }
+} */
+
+
+body {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body:global(.enabledScroll) {
+  overflow: auto;
+  overflow-x: hidden;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  overflow: hidden;
+}
+
+
 .root {
   display: flex;
   flex-direction: column;
   gap: 144px;
+
+  margin: auto;
 }
 
 @media (min-width: 1920px) {
