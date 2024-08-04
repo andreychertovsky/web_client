@@ -220,7 +220,7 @@
     height: auto;
     position: relative;
     gap: 34px;
-
+    min-height: 0;
     justify-content: start;
     padding-top: 40px;
   }
@@ -235,7 +235,7 @@
 
   .bottom {
     max-width: 100%;
-    gap: 2rem;
+    gap: 5px;
     position: relative;
     margin: 0;
     flex-direction: column;
@@ -298,3 +298,10 @@
     }
   }
 }
+
+@media (max-width: 960px) and (orientation : portrait) {
+  .root {
+    padding-top: 22%;
+  }
+}
+
