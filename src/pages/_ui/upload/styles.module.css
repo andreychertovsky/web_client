@@ -115,6 +115,12 @@
 }
 
 @media (max-width: 1440px) {
+  .root {
+    min-height: 0;
+    height: 100%;
+    max-height: 600px;
+  }
+
   .heading {
     /* font: var(--font-title-h3); */
   }
