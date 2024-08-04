@@ -299,9 +299,21 @@
   }
 }
 
-@media (max-width: 960px) and (orientation : portrait) {
+@media (max-width: 1440px) {
+  .root {
+    min-height: 0;
+    height: 100%;
+    max-height: 600px;
+  }
+
+  .heading {
+    font: var(--font-title-h4);
+    max-width: 472px;
+  }
+}
+
+@media (max-width: 960px) and (orientation: portrait) {
   .root {
     padding-top: 15%;
   }
 }
-

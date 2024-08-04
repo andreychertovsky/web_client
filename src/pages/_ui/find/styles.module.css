@@ -137,6 +137,15 @@
     height: 100%;
     max-height: 600px;
   }
+
+  .heading {
+    font: var(--font-title-h4);
+  }
+
+  .supporting-text {
+    font: var(--font-text-small);
+    max-width: 375px;
+  }
 }
 
 

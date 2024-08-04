@@ -122,7 +122,12 @@
   }
 
   .heading {
-    /* font: var(--font-title-h3); */
+    font: var(--font-title-h4);
+  }
+
+  .supporting-text {
+    font: var(--font-text-small);
+    max-width: 375px;
   }
 
   /* .right {

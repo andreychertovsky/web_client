@@ -45,12 +45,42 @@ window.history.scrollRestoration = "manual";
 const touchThreshold = 20;
 const touchSweepInstance = new TouchSweep(window, {}, touchThreshold);
 
+
+// function handleIfTablet() {
+//   if (window.innerWidth > 960 && window.innerHeight > window.innerWidth) {
+//     document.body.querySelector('.' + homeStyles.scrollContainer)?.classList.add('tablet')
+//     document.body.querySelector('.' + heroStyles.video)?.classList.add('tablet')
+//   }
+//   else {
+//     document.body.querySelector('.' + homeStyles.scrollContainer)?.classList.remove('tablet')
+//     document.body.querySelector('.' + heroStyles.video)?.classList.remove('tablet')
+//   }
+// }
+
+
+
+function handleIfTablet() {
+  if (window.innerWidth > 960 && window.innerHeight > window.innerWidth) {
+    document.body.querySelector('main')?.classList.add('tablet')
+    document.body.querySelector('.' + heroStyles.video)?.classList.add('tablet')
+  }
+  else {
+    document.body.querySelector('main')?.classList.remove('tablet')
+    document.body.querySelector('.' + heroStyles.video)?.classList.remove('tablet')
+  }
+}
+
+handleIfTablet()
+
 let isMobile = window.innerWidth <= 960;
 window.addEventListener("resize", () => {
   let newIsMobile = window.innerWidth <= 960;
   if (newIsMobile !== isMobile) window.location.reload();
   isMobile = newIsMobile;
+
+  handleIfTablet()
 });
+
 
 HTMLVideoElement.prototype.playBackwards = function () {
   this.pause();
