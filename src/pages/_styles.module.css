@@ -13,7 +13,7 @@ html {
 }
 
 html {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 html:global(.enabledScroll) {
