@@ -179,6 +179,8 @@
 
 @media (max-width: 960px) {
   .root {
+    min-height: 80vh;
+    max-height: 100vh;
     height: calc(100vh);
     position: sticky;
     gap: 34px;
