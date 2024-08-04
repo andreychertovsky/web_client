@@ -13,22 +13,6 @@ html {
   }
 }
 
-/* @media only screen and (max-width: 1024px) {
-  :root,
-  body,
-  html {
-    font-size: calc(1vw + 1vh);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  :root,
-  body,
-  html {
-    font-size: calc(1.6vw + 1.6vh);
-  }
-} */
-
 html {
   overflow-x: hidden;
 }
