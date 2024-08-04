@@ -2,9 +2,12 @@
 import { containerStyles } from "@/shared/ui/container";
 
 import styles from "./styles.module.css";
+import ImageFind from '@/shared/assets/images/home_find.png';
 ---
 
 <section class:list={[containerStyles, styles.root, 'home__find']}>
+  <img src={ImageFind.src} class={styles.findImage} alt="upload">
+
   <div class={styles.left}>
     <h2 class={styles.heading}>Don't just search, find every details</h2>
     <p class={styles.supportingText}>
@@ -13,5 +16,5 @@ import styles from "./styles.module.css";
       gap between you and the perfect find.
     </p>
   </div>
-  <div class={styles.right}></div>
+  <div class={styles.scrollObserver}></div>
 </section>

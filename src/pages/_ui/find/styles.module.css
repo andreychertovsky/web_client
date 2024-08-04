@@ -38,32 +38,35 @@
   justify-content: center;
 
   position: absolute;
-  min-height: 80dvh;
+  min-height: 80vh;
+  left: 50%;
+  transform: translateX(-50%);
 
   pointer-events: none;
+  top: 88px;
 }
 
 .left {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 2.7rem;
 
-  max-width: 750px;
-  margin-left: 6vw;
+  max-width: 37.5rem;
+  margin-left: 4rem;
 }
 
 .heading {
-  /* font: var(--font-title-h5); */
-  font-size: 85px;
-  text-align: start;
+  font: var(--font-title-h2);
+  font-size: 4.2rem;
+  line-height: 4.8rem;
 
-  /* --font-title-h5: 800 28px/36px var(--font-sans); */
+  /* --font-title-h5: 800 1.4rem/1.8rem var(--font-sans); */
   color: var(--color-main-black);
   font-variant-numeric: lining-nums proportional-nums ordinal;
   font-feature-settings: 'case' on, 'liga' off;
 
   opacity: 0;
-  transform: translate3d(0, 30px, 0);
+  transform: translate3d(0, 1.5rem, 0);
 
   transition: .3s;
 }
@@ -76,26 +79,25 @@
 }
 .heading:global(.hide) {
   opacity: 0;
-  transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -1.5rem, 0);
 
   transition: .3s;
 }
 
 .supporting-text {
-  /* font: var(--font-text-small); */
-  font-size: 20px;
+  font: var(--font-text-main);
+  font-size: 1rem;
+  line-height: 1.6rem;
   font-variant-numeric: lining-nums proportional-nums;
   font-feature-settings: 'liga' off;
 
   color: var(--color-main-dark-gray);
 
   opacity: 0;
-  transform: translate3d(0, 30px, 0);
+  transform: translate3d(0, 1.5rem, 0);
 
   transition: .3s;
   max-width: 90%;
-
-  margin: 60px 0 0 0;
 }
 
 .supporting-text:global(.active) {
@@ -107,9 +109,79 @@
 }
 .supporting-text:global(.hide) {
   opacity: 0;
-  transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -1.5rem, 0);
 
   transition: .3s;
   transition-delay: .15s;
 }
+
+
+.scrollObserver {
+  display: none;
+  width: 10%;
+  height: 1px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+}
+
+
+.findImage {
+  display: none;
+}
+
+
+
+
+
+@media (max-width: 960px) {
+  .root {
+    height: calc(100vh);
+    position: sticky;
+    gap: 34px;
+    justify-content: start;
+
+    max-width: 450px;
+    margin: auto;
+    transform: none;
+    left: initial;
+
+    padding-top: 88px;
+  }
+
+  .heading {
+    font: var(--font-title-h5);
+    opacity: 1;
+    text-align: center;
+  }
+
+  .left {
+    max-width: 100%;
+    gap: 2rem;
+    position: relative;
+    margin: 0;
+  }
+
+  .supporting-text {
+    font: var(--font-text-small);
+    opacity: 1;
+    text-align: center;
+    max-width: 95%;
+  }
+
+  .findImage {
+    display: block;
+    width: 75%;
+    max-height: 45%;
+    max-width: 430px;
+    object-fit: cover;
+    margin: 0 auto 0 auto;
+    border-radius: 24px;
+  }
+
+  .scrollObserver {
+    display: block;
+  }
+}
+
 

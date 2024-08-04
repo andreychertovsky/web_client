@@ -22,12 +22,14 @@ import styles from "./_styles.module.css";
     <NavDesktop />
   </header>
   <main class={styles.root}>
-    <Hero />
-    <Upload />
-    <Find />
-    <Markets />
-    <FAQ />
+    <div class={styles.scrollContainer}>
+      <Hero />
+      <Upload />
+      <Find />
+      <Markets />
+    </div>
   </main>
+  <FAQ />
   <Footer />
   <Dialog name={DIALOGS.MENU}>
     <NavMobile />

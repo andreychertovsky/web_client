@@ -21,6 +21,7 @@
     "astro": "^4.5.4",
     "cropperjs": "^1.6.2",
     "modern-normalize": "^2.0.0",
+    "touchsweep": "^2.2.0",
     "typescript": "^5.4.2"
   },
   "devDependencies": {

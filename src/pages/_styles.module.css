@@ -1,4 +1,4 @@
-/* 
+
 :root,
 body,
 html {
@@ -13,7 +13,7 @@ html {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+/* @media only screen and (max-width: 1024px) {
   :root,
   body,
   html {
@@ -29,6 +29,15 @@ html {
   }
 } */
 
+html {
+  overflow-x: hidden;
+}
+
+html:global(.enabledScroll) {
+  overflow: scroll !important;
+}
+
+
 
 body {
   height: 100dvh;
@@ -36,9 +45,9 @@ body {
 }
 
 body:global(.enabledScroll) {
-  overflow: auto;
+  overflow: auto !important;
   overflow-x: hidden;
-  height: auto;
+  height: auto !important;
 }
 
 ::-webkit-scrollbar {
@@ -47,6 +56,16 @@ body:global(.enabledScroll) {
   overflow: hidden;
 }
 
+
+main {
+  z-index: -1;
+  height: 100vh;
+}
+
+.scrollContainer {
+  display: block;
+  transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
 
 .root {
   display: flex;
@@ -61,3 +80,16 @@ body:global(.enabledScroll) {
     gap: 288px;
   }
 }
+
+
+@media (max-width: 960px) {
+  html {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .root {
+    gap: 0;
+  }
+}
+
