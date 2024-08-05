@@ -1,5 +1,6 @@
 .main {
   padding: 35px 11px 11px;
+  min-height: 100vh;
 }
 
 .container {
@@ -32,9 +33,3 @@
   }
 }
 
-@media (min-width: 2560px) {
-  .heading {
-    font: var(--font-title-h2);
-    margin-bottom: 58px;
-  }
-}

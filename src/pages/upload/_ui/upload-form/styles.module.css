@@ -161,32 +161,3 @@
     margin-top: 66px;
   }
 }
-
-@media (min-width: 2560px) {
-  .root {
-    flex-direction: row;
-  }
-
-  .top {
-    gap: 77px;
-    flex-direction: column;
-    max-width: 1144px;
-    width: 100%;
-  }
-
-  .description {
-    gap: 17px;
-  }
-
-  .divider {
-    margin: 0;
-    padding: 0;
-    width: 25px;
-    height: 100%;
-    border-left: 2px solid var(--color-main-gray);
-  }
-
-  .bottom {
-    flex-direction: column;
-  }
-}

@@ -21,8 +21,9 @@ import { api } from "@/shared/api";
 const items = await api.faq.getItems();
 ---
 
-<wc-scroll-to-section data-section={SECTIONS.FAQ}>
-  <section class={styles.root}>
+<!-- <wc-scroll-to-section data-section={SECTIONS.FAQ}> -->
+<wc-scroll-to-section>
+  <section class:list={[styles.root, 'home__faq']}>
     <div class:list={[containerStyles, styles.container]}>
       <div class={styles.wrapper}>
         <div class={styles.left}>

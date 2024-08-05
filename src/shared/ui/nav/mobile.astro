@@ -50,7 +50,8 @@ const isActive = (pathname) => currentPathname === pathname;
         {
           isActive("/") ? (
             <wc-dialog-close-trigger data-name={DIALOGS.MENU}>
-              <wc-scroll-to-trigger data-scroll-to="faq">
+              {/* <wc-scroll-to-trigger data-scroll-to="faq"> */}
+              <wc-scroll-to-trigger>
                 <button class:list={[styles.link, styles.buttonGhost]}>
                   FAQ
                 </button>

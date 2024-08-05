@@ -10,6 +10,7 @@ import uploadStyles from "@/pages/_ui/upload/styles.module.css";
 import { scrollToEvent } from "@/entities/scroll";
 
 import { SECTIONS } from "@/shared/config";
+import headerStyles from "@/shared/ui/nav/styles.module.css";
 
 const handleURLHash = (hash: string) => () => {
   const url = new URL(window.location.href);
@@ -21,30 +22,9 @@ const handleURLHash = (hash: string) => () => {
 
 document.addEventListener("DOMContentLoaded", handleURLHash(SECTIONS.FAQ));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 window.history.scrollRestoration = "manual";
 const touchThreshold = 20;
 const touchSweepInstance = new TouchSweep(window, {}, touchThreshold);
-
 
 // function handleIfTablet() {
 //   if (window.innerWidth > 960 && window.innerHeight > window.innerWidth) {
@@ -57,20 +37,21 @@ const touchSweepInstance = new TouchSweep(window, {}, touchThreshold);
 //   }
 // }
 
-
-
 function handleIfTablet() {
   if (window.innerWidth > 960 && window.innerHeight > window.innerWidth) {
-    document.body.querySelector('main')?.classList.add('tablet')
-    document.body.querySelector('.' + heroStyles.video)?.classList.add('tablet')
-  }
-  else {
-    document.body.querySelector('main')?.classList.remove('tablet')
-    document.body.querySelector('.' + heroStyles.video)?.classList.remove('tablet')
+    document.body.querySelector("main")?.classList.add("tablet");
+    document.body
+      .querySelector("." + heroStyles.video)
+      ?.classList.add("tablet");
+  } else {
+    document.body.querySelector("main")?.classList.remove("tablet");
+    document.body
+      .querySelector("." + heroStyles.video)
+      ?.classList.remove("tablet");
   }
 }
 
-handleIfTablet()
+handleIfTablet();
 
 let isMobile = window.innerWidth <= 960;
 window.addEventListener("resize", () => {
@@ -78,9 +59,17 @@ window.addEventListener("resize", () => {
   if (newIsMobile !== isMobile) window.location.reload();
   isMobile = newIsMobile;
 
-  handleIfTablet()
+  handleIfTablet();
 });
 
+
+
+
+declare global {
+  interface HTMLVideoElement {
+    playBackwards(): void;
+  }
+}
 
 HTMLVideoElement.prototype.playBackwards = function () {
   this.pause();
@@ -311,7 +300,8 @@ const markets = {
 const heroEl = homeDesktopAnimationElements.hero as HTMLElement;
 const uploadEl = homeDesktopAnimationElements.upload as HTMLElement;
 const findEl = homeDesktopAnimationElements.find as HTMLElement;
-const marketsEL = homeDesktopAnimationElements.markets as HTMLElement;
+const marketsEl = homeDesktopAnimationElements.markets as HTMLElement;
+const faqEl = document.body.querySelector(".home__faq") as HTMLElement;
 
 async function scroll(e) {
   if (isMobile) return;
@@ -348,13 +338,12 @@ async function scroll(e) {
     markets.show();
 
     findEl.style.pointerEvents = "none";
-    marketsEL.style.pointerEvents = "auto";
+    marketsEl.style.pointerEvents = "auto";
 
     setTimeout(() => {
       if (currentSection !== "markets") return;
 
       addClassActive(element("." + marketsStyles.track));
-      console.log("ENABLE SCOLL");
       enableScroll();
       video.currentTime = 0;
     }, 3500);
@@ -386,7 +375,6 @@ async function scroll(e) {
     currentSection = "hero";
   } else if (!isDown && currentSection === "markets" && window.scrollY === 0) {
     disableScroll();
-    console.log("REMOVE SCROLL");
     resetLastScrollTime(2000);
 
     markets.hide(true);
@@ -394,7 +382,7 @@ async function scroll(e) {
     find.show(true);
 
     findEl.style.pointerEvents = "auto";
-    marketsEL.style.pointerEvents = "none";
+    marketsEl.style.pointerEvents = "none";
     removeClassActive(element("." + marketsStyles.track));
 
     currentSection = "find";
@@ -404,14 +392,6 @@ async function scroll(e) {
 window.addEventListener("wheel", scroll);
 let currentMobileSection = "hero";
 let lastScrollTimeMobile = 0;
-
-
-
-
-
-
-
-
 
 
 
@@ -484,7 +464,7 @@ async function scrollMobile(e: any, swipeDirection: string = "") {
     currentMobileSection = "hero";
   } else if (swipeDirection === "up" && currentMobileSection === "markets") {
     const pageY = window.scrollY;
-    const y = marketsEL.getBoundingClientRect().top + pageY;
+    const y = marketsEl.getBoundingClientRect().top + pageY;
 
     if (y < pageY) return;
 
@@ -501,5 +481,98 @@ async function scrollMobile(e: any, swipeDirection: string = "") {
   }
 }
 
+window.addEventListener("wheel", (e) => {
+  const isDown = e.deltaY > 0;
+
+  if (isDown) return scrollMobile(e, "down");
+  scrollMobile(e, "up");
+});
 window.addEventListener("swipeup", (e) => scrollMobile(e, "down"));
 window.addEventListener("swipedown", (e) => scrollMobile(e, "up"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// header page block links handle
+
+const links = Array.from(
+  document.body.querySelectorAll("." + headerStyles.link),
+);
+let isLinkClicked = false;
+
+function removeHashFromUrl() {
+  const uri = window.location.toString();
+
+  if (uri.indexOf("#") > 0) {
+    const cleanUri = uri.substring(0, uri.indexOf("#"));
+
+    window.history.replaceState({}, document.title, cleanUri);
+  }
+}
+
+async function handleLinkClickDesktop() {
+  enableScroll();
+  faqEl.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  await wait(1000);
+  removeHashFromUrl();
+  isLinkClicked = true;
+}
+
+async function handleLinkClickMobile() {
+  const scrollContainer = element("." + homeStyles.scrollContainer) as Element;
+
+  scrollContainer.style.transform = "translate3d(0,-300vh,0)";
+  lastScrollTimeMobile = Date.now();
+
+  await wait(750);
+  currentMobileSection = "markets";
+  enableScroll();
+
+  await wait(100);
+  removeHashFromUrl();
+  faqEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+links.forEach((link) => {
+  link.addEventListener("click", async (e) => {
+    if (isMobile) return handleLinkClickMobile(e);
+    handleLinkClickDesktop();
+  });
+});
+
+setInterval(() => {
+  if (!isLinkClicked) return;
+
+  if (window.scrollY < 15) {
+    disableScroll();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+
+    isLinkClicked = false;
+  }
+}, 50);
+
+if (window.location.href.includes("#faq")) {
+  if (isMobile) handleLinkClickMobile();
+  else handleLinkClickDesktop();
+}

@@ -39,17 +39,7 @@ const isActive = (pathname) => currentPathname === pathname;
       </a>
     </li>
     <li class={styles.item}>
-      {
-        isActive("/") ? (
-          <wc-scroll-to-trigger data-scroll-to="faq">
-            <button class:list={[styles.link, styles.buttonGhost]}>FAQ</button>
-          </wc-scroll-to-trigger>
-        ) : (
-          <a href="/#faq" class={styles.link}>
-            FAQ
-          </a>
-        )
-      }
+      <a href="/#faq" class={styles.link}> FAQ </a>
     </li>
     <li class:list={[styles.item, isActive("/contact") && styles.active]}>
       <a
